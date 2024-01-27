@@ -19,7 +19,8 @@ I have used Google colab and python to load the dummy datasets beforehand for ma
 
 Using this datasets some anomolies cases are given below: 
 **Anomaly-1**
-Description - Finding suspicious transactions by searching for transactions made more than $5000 in one day
+Description - Finding suspicious transactions by searching for transactions made more than $5000 in one day.
+
 SQL Command:
 SELECT
 GROUP_CONCAT(MerchantTransactionID) AS
@@ -35,7 +36,8 @@ FromAccountNumber,MerchantID
 HAVING COUNT(*) >= 2;
 
 **Anomaly-2**
-Description - Sending alert message for suspicious transactions to the Merchant
+Description - Sending alert message for suspicious transactions to the Merchant.
+
 SQL Command:
 CREATE TABLE MerchantTransaction
 (MerchantTransactionID INT PRIMARY KEY,
@@ -53,7 +55,8 @@ SELECT * FROM MerchantTransaction
 WHERE Amount>=5000;
 
 **Anomaly-3**
-Description - Finding Duplicate Transaction made by Merchant with amount, type and date
+Description - Finding Duplicate Transaction made by Merchant with amount, type and date.
+
 SQL Command:
 SELECT MerchantTransactionID,
 From AccountNumber,Amount,Transaction
@@ -71,7 +74,8 @@ DATE_ADD(mt1.TransactionDate,
 INTERVAL 1 MINUTE) );
 
 **Anomaly-4**
-Description - Finding no.of Alerts for different customer account in order to detect fraud
+Description - Finding no.of Alerts for different customer accounts in order to detect fraud.
+
 SQL Command:
 SELECT c.CustomerID,
 COUNT(mta.AlertID) AS AlertCount FROM
