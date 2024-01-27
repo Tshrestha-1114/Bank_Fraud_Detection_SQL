@@ -1,0 +1,1579 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "\\about\nUse BankSQL;\nSELECT * FROM Customer\nINSERT INTO Customer (CustomerID, FirstName, LastName, Address, Email, PhoneNumber, Occupation)\nVALUES \n  (2, 'Jane', 'Smith', '456 Oak St', 'jane.smith@example.com', '9876543210', 'Data Analyst'),\n  (3, 'Bob', 'Johnson', '789 Pine St', 'bob.johnson@example.com', '5551234567', 'Teacher'),\n  (4, 'Alice', 'Williams', '101 Elm St', 'alice.williams@example.com', '4445556666', 'Accountant'),\n  (5, 'Charlie', 'Brown', '202 Maple St', 'charlie.brown@example.com', '3332221111', 'Graphic Designer'),\n  (6, 'Eva', 'Miller', '303 Birch St', 'eva.miller@example.com', '2223334444', 'Software Developer'),\n  (7, 'Frank', 'Davis', '404 Cedar St', 'frank.davis@example.com', '1112223333', 'Project Manager'),\n  (8, 'Grace', 'Martinez', '505 Pine St', 'grace.martinez@example.com', '9998887777', 'HR Specialist'),\n  (9, 'Henry', 'Anderson', '606 Oak St', 'henry.anderson@example.com', '8887776666', 'Financial Analyst'),\n  (10, 'Isabel', 'Taylor', '707 Elm St', 'isabel.taylor@example.com', '7776665555', 'UX Designer'),\n  (11, 'Jack', 'Moore', '808 Maple St', 'jack.moore@example.com', '6665554444', 'Marketing Manager'),\n  (12, 'Katie', 'White', '909 Birch St', 'katie.white@example.com', '5554443333', 'Software Engineer'),\n  (13, 'Liam', 'Hall', '123 Oak St', 'liam.hall@example.com', '4443332222', 'Data Scientist'),\n  (14, 'Mia', 'Lee', '234 Cedar St', 'mia.lee@example.com', '3332221111', 'Teacher'),\n  (15, 'Noah', 'Baker', '345 Pine St', 'noah.baker@example.com', '2221110000', 'Accountant'),\n  (16, 'Olivia', 'Ward', '456 Elm St', 'olivia.ward@example.com', '1110009999', 'Graphic Designer'),\n  (17, 'Paul', 'Fisher', '567 Maple St', 'paul.fisher@example.com', '9990001111', 'Software Developer'),\n  (18, 'Quinn', 'Cruz', '678 Birch St', 'quinn.cruz@example.com', '8889990000', 'Project Manager'),\n  (19, 'Rachel', 'Hill', '789 Cedar St', 'rachel.hill@example.com', '7778889999', 'HR Specialist'),\n  (20, 'Samuel', 'Clark', '890 Pine St', 'samuel.clark@example.com', '6667778888', 'Financial Analyst'),\n  (21, 'Sophia', 'Allen', '901 Oak St', 'sophia.allen@example.com', '5556667777', 'UX Designer'),\n  (22, 'Thomas', 'Young', '112 Elm St', 'thomas.young@example.com', '4445556666', 'Marketing Manager'),\n  (23, 'Uma', 'Lopez', '223 Maple St', 'uma.lopez@example.com', '3334445555', 'Software Engineer'),\n  (24, 'Victor', 'Evans', '334 Birch St', 'victor.evans@example.com', '2223334444', 'Data Scientist'),\n  (25, 'Wendy', 'Garcia', '445 Cedar St', 'wendy.garcia@example.com', '1112223333', 'Teacher'),\n  (26, 'Xavier', 'Hernandez', '556 Pine St', 'xavier.hernandez@example.com', '9998887777', 'Accountant'),\n  (27, 'Yara', 'Jones', '667 Oak St', 'yara.jones@example.com', '8887776666', 'Graphic Designer'),\n  (28, 'Zane', 'Morgan', '778 Elm St', 'zane.morgan@example.com', '7776665555', 'Software Developer'),\n  (29, 'Alice', 'Williams', '889 Maple St', 'alice.williams@example.com', '6665554444', 'Project Manager'),\n  (30, 'Zoe', 'Smith', '990 Birch St', 'zoe.smith@example.com', '5554443333', 'Marketing Specialist');\nCREATE TABLE Account (\n    AccountNumber BIGINT PRIMARY KEY,\n    CustomerID INT,\n    AccountType VARCHAR(50),\n    Balance DECIMAL(10, 2),\n    OpenDate DATE,\n    FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID)\n);\nINSERT INTO Account (AccountNumber, CustomerID, AccountType, Balance, OpenDate)\nVALUES \n  (1111111111111111, 1, 'Savings', 5000.00, '2022-01-01'),\n  (1111111111111112, 2, 'Savings', 7000.50, '2022-01-02'),\n  (1111111111111113, 3, 'Savings', 5500.75, '2022-01-03'),\n  (1111111111111114, 4, 'Savings', 8000.25, '2022-01-04'),\n  (1111111111111115, 5, 'Savings', 6000.50, '2022-01-05'),\n  (1111111111111116, 6, 'Savings', 9000.00, '2022-01-06'),\n  (1111111111111117, 7, 'Savings', 8000.75, '2022-01-07'),\n  (1111111111111118, 8, 'Savings', 9500.25, '2022-01-08'),\n  (1111111111111119, 9, 'Savings', 7500.50, '2022-01-09'),\n  (1111111111111110, 10, 'Savings', 8500.00, '2022-01-10'),\n  (1111111111111121, 11, 'Savings', 7200.75, '2022-01-11'),\n  (1111111111111122, 12, 'Savings', 8800.25, '2022-01-12'),\n  (1111111111111123, 13, 'Savings', 6500.50, '2022-01-13'),\n  (1111111111111124, 14, 'Savings', 9300.00, '2022-01-14'),\n  (1111111111111125, 15, 'Savings', 7800.75, '2022-01-15'),\n  (1111111111111126, 16, 'Savings', 10500.25, '2022-01-16'),\n  (1111111111111127, 17, 'Savings', 6300.50, '2022-01-17'),\n  (1111111111111128, 18, 'Savings', 9800.00, '2022-01-18'),\n  (1111111111111129, 19, 'Savings', 8700.75, '2022-01-19'),\n  (1111111111111130, 20, 'Savings', 9200.25, '2022-01-20'),\n  (2222222222222221, 1, 'Checking', 10000.00, '2022-01-01'),\n  (2222222222222222, 2, 'Checking', 12000.50, '2022-01-02'),\n  (2222222222222223, 3, 'Checking', 10500.75, '2022-01-03'),\n  (2222222222222224, 4, 'Checking', 13000.25, '2022-01-04'),\n  (2222222222222225, 5, 'Checking', 11000.50, '2022-01-05'),\n  (2222222222222226, 6, 'Checking', 9500.00, '2022-01-06'),\n  (2222222222222227, 7, 'Checking', 11800.75, '2022-01-07'),\n  (2222222222222228, 8, 'Checking', 11200.25, '2022-01-08'),\n  (2222222222222229, 9, 'Checking', 12500.50, '2022-01-09'),\n  (2222222222222220, 10, 'Checking', 10800.00, '2022-01-10'),\n  (2222222222222231, 11, 'Checking', 9800.75, '2022-01-11'),\n  (2222222222222232, 12, 'Checking', 11400.25, '2022-01-12'),\n  (2222222222222233, 13, 'Checking', 9700.50, '2022-01-13'),\n  (2222222222222234, 14, 'Checking', 13200.00, '2022-01-14'),\n  (2222222222222235, 15, 'Checking', 11600.75, '2022-01-15'),\n  (2222222222222236, 16, 'Checking', 10200.25, '2022-01-16'),\n  (2222222222222237, 17, 'Checking', 12300.50, '2022-01-17'),\n  (2222222222222238, 18, 'Checking', 10900.00, '2022-01-18'),\n  (2222222222222239, 19, 'Checking', 11500.75, '2022-01-19'),\n  (2222222222222240, 20, 'Checking', 12100.25, '2022-01-20'),\n  (2222222222222241, 21, 'Checking', 10700.50, '2022-01-21'),\n  (2222222222222242, 22, 'Checking', 12900.00, '2022-01-22'),\n  (2222222222222243, 23, 'Checking', 11100.75, '2022-01-23'),\n  (2222222222222244, 24, 'Checking', 11800.25, '2022-01-24'),\n  (2222222222222245, 25, 'Checking', 12400.50, '2022-01-25'),\n  (2222222222222246, 26, 'Checking', 10600.00, '2022-01-26'),\n  (2222222222222247, 27, 'Checking', 13000.75, '2022-01-27'),\n  (2222222222222248, 28, 'Checking', 11300.25, '2022-01-28'),\n  (2222222222222249, 29, 'Checking', 11900.50, '2022-01-29'),\n  (2222222222222250, 30, 'Checking', 12500.00, '2022-01-30');\nCREATE TABLE Merchant (\n    MerchantID INT PRIMARY KEY,\n    MerchantName VARCHAR(100),\n    Location VARCHAR(255),\n    ContactInfo VARCHAR(100),\n    WebsiteURL VARCHAR(255)\n);\nINSERT INTO Merchant (MerchantID, MerchantName, Location, ContactInfo, WebsiteURL)\nVALUES\n  (1, 'Tech Emporium', '123 Tech Street, Cityville', '+123-456-7890', 'http://www.techemporium.com'),\n  (2, 'Gourmet Grocers', '456 Market Avenue, Townsville', '+987-654-3210', 'http://www.gourmetgrocers.com'),\n  (3, 'Fashion Haven', '789 Style Boulevard, Fashion City', '+555-123-4567', 'http://www.fashionhaven.com'),\n  (4, 'Electro Mart', '101 Gadget Lane, Techland', '+444-555-6666', 'http://www.electromart.com'),\n  (5, 'Home Essentials', '202 Comfort Street, Homestead', '+333-222-1111', 'http://www.homeessentials.com'),\n  (6, 'Book Nook', '303 Reading Road, Booksville', '+222-333-4444', 'http://www.booknook.com'),\n  (7, 'Sports Zone', '404 Stadium Street, Sportstown', '+111-222-3333', 'http://www.sportszone.com'),\n  (8, 'Pet Paradise', '505 Pet Lane, Petropolis', '+999-888-7777', 'http://www.petparadise.com'),\n  (9, 'Green Thumb Nursery', '606 Garden Avenue, Plantville', '+888-777-6666', 'http://www.greenthumbnursery.com'),\n  (10, 'Artistic Crafts', '707 Gallery Lane, Artville', '+777-666-5555', 'http://www.artisticcrafts.com'),\n  (11, 'Music Haven', '808 Melody Street, Music City', '+666-555-4444', 'http://www.musichaven.com'),\n  (12, 'Culinary Delights', '909 Tasty Avenue, Foodville', '+555-444-3333', 'http://www.culinarydelights.com'),\n  (13, 'Outdoor Gear', '123 Adventure Road, Outdoorsville', '+444-333-2222', 'http://www.outdoorgear.com'),\n  (14, 'Health Hub', '234 Wellness Lane, Healthtown', '+333-222-1111', 'http://www.healthhub.com'),\n  (15, 'Travel Treasures', '345 Wanderlust Street, Travelville', '+222-111-0000', 'http://www.traveltreasures.com'),\n  (16, 'Auto Oasis', '456 Motor Avenue, Autocity', '+111-000-9999', 'http://www.autooasis.com'),\n  (17, 'Home Tech Solutions', '567 Smart Street, Techville', '+999-000-1111', 'http://www.hometechsolutions.com'),\n  (18, 'Fashion Fusion', '678 Trendy Lane, Fashionville', '+888-999-0000', 'http://www.fashionfusion.com'),\n  (19, 'Gaming Galaxy', '789 Play Street, Gameville', '+777-888-9999', 'http://www.gaminggalaxy.com'),\n  (20, 'Fitness Focus', '890 Active Avenue, Fitcity', '+666-777-8888', 'http://www.fitnessfocus.com');\nCREATE TABLE MerchantTransaction (\n    MerchantTransactionID INT PRIMARY KEY,\n    FromAccountNumber BIGINT,\n    Amount DECIMAL(10, 2),\n    TransactionDate DATETIME,\n    TransactionType VARCHAR(50),\n    MerchantID INT(100),\n    FOREIGN KEY (MerchantID) REFERENCES Merchant(MerchantID),\n    FOREIGN KEY (FromAccountNumber) REFERENCES Account(AccountNumber)\n);\n\n\n\nINSERT INTO MerchantTransaction (MerchantTransactionID, FromAccountNumber, Amount, TransactionDate, TransactionType, MerchantID)\nVALUES\n  (1, 2222222222222221, 150.75, '2022-01-01 08:30:00', 'Purchase', 1),\n  (2, 2222222222222222, 200.50, '2022-01-02 10:15:00', 'Purchase', 2),\n  (3, 2222222222222223, 75.25, '2022-01-03 12:45:00', 'Purchase', 3),\n  (4, 2222222222222224, 120.75, '2022-01-04 14:20:00', 'Purchase', 4),\n  (5, 2222222222222225, 80.50, '2022-01-05 16:10:00', 'Purchase', 5),\n  (6, 2222222222222226, 11320.00, '2022-01-06 18:00:00', 'Purchase', 6),\n  (7, 2222222222222227, 95.75, '2022-01-07 20:30:00', 'Purchase', 7),\n  (8, 2222222222222228, 130.25, '2022-01-08 22:15:00', 'Purchase', 8),\n  (9, 2222222222222229, 100.50, '2022-01-09 23:45:00', 'Purchase', 9),\n  (10, 2222222222222220, 115.00, '2022-01-10 08:00:00', 'Purchase', 10),\n  (11, 2222222222222231, 90.75, '2022-01-11 10:30:00', 'Purchase', 11),\n  (12, 2222222222222232, 105.25, '2022-01-12 12:15:00', 'Purchase', 12),\n  (13, 2222222222222233, 70000.50, '2022-01-13 14:50:00', 'Purchase', 13),\n  (14, 2222222222222234, 95.00, '2022-01-14 16:40:00', 'Purchase', 14),\n  (15, 2222222222222235, 75.75, '2022-01-15 18:30:00', 'Purchase', 15),\n  (16, 2222222222222236, 125.25, '2022-01-16 20:00:00', 'Purchase', 16),\n  (17, 2222222222222237, 85.50, '2022-01-17 22:30:00', 'Purchase', 17),\n  (18, 2222222222222238, 110.00, '2022-01-18 23:45:00', 'Purchase', 18),\n  (19, 2222222222222239, 120.75, '2022-01-19 08:15:00', 'Purchase', 19),\n  (20, 2222222222222240, 95.25, '2022-01-20 10:45:00', 'Purchase', 20),\n  (21, 2222222222222221, 130.50, '2022-01-21 12:30:00', 'Purchase', 1),\n  (22, 2222222222222222, 85.75, '2022-01-22 14:20:00', 'Purchase', 2),\n  (23, 2222222222222223, 105.25, '2022-01-23 16:00:00', 'Purchase', 3),\n  (24, 2222222222222223, 110.20,  '2022-01-23 16:00:05', 'Purchase', 3),\n  (25, 2222222222222224, 75.50, '2022-01-24 18:30:00', 'Purchase', 4),\n  (26, 2222222222222225, 90.00, '2022-01-25 20:15:00', 'Purchase', 5),\n  (27, 2222222222222226, 115.75, '2022-01-26 22:00:00', 'Purchase', 6),\n  (28, 2222222222222227, 100.25, '2022-01-27 23:45:00', 'Purchase', 7),\n  (29, 2222222222222228, 110.50, '2022-01-28 08:00:00', 'Purchase', 8),\n  (30, 2222222222222229, 80.75, '2022-01-29 10:30:00', 'Purchase', 9),\n  (31, 2222222222222220, 95.25, '2022-01-30 12:15:00', 'Purchase', 10),\n  (32, 2222222222222231, 120.50, '2022-02-01 14:50:00', 'Purchase', 11),\n  (33, 2222222222222232, 70.75, '2022-02-02 16:40:00', 'Purchase', 12),\n  (34, 2222222222222233, 85.25, '2022-02-03 18:30:00', 'Purchase', 13),\n  (35, 2222222222222234, 105.50, '2022-02-04 20:00:00', 'Purchase', 14),\n  (36, 2222222222222235, 90.75, '2022-02-05 22:30:00', 'Purchase', 15),\n  (37, 2222222222222236, 115.25, '2022-02-06 23:45:00', 'Purchase', 16),\n  (38, 2222222222222237, 100.50, '2022-02-07 08:15:00', 'Purchase', 17),\n  (39, 2222222222222238, 110.75, '2022-02-08 10:45:00', 'Purchase', 18),\n  (40, 2222222222222239, 95.25, '2022-02-09 12:30:00', 'Purchase', 19),\n  (41, 2222222222222240, 120.50, '2022-02-10 14:20:00', 'Purchase', 20),\n  (42, 2222222222222221, 125.75, '2022-02-11 16:00:00', 'Purchase', 1),\n  (43, 2222222222222222, 80.50, '2022-02-12 18:30:00', 'Purchase', 2),\n  (44, 2222222222222223, 95.25, '2022-02-13 20:15:00', 'Purchase', 3),\n  (45, 2222222222222224, 110.75, '2022-02-14 22:00:00', 'Purchase', 4),\n  (46, 2222222222222225, 75.50, '2022-02-15 23:45:00', 'Purchase', 5),\n  (47, 2222222222222226, 90.25, '2022-02-16 08:00:00', 'Purchase', 6),\n  (48, 2222222222222227, 105.50, '2022-02-17 10:30:00', 'Purchase', 7),\n  (49, 2222222222222228, 120.75, '2022-02-18 12:15:00', 'Purchase', 8),\n  (50, 2222222222222229, 85.25, '2022-02-19 14:50:00', 'Purchase', 9),\n  (51, 2222222222222220, 100.50, '2022-02-20 16:40:00', 'Purchase', 10),\n  (52, 2222222222222221, 115.75, '2022-02-21 18:30:00', 'Purchase', 11),\n  (53, 2222222222222222, 130.25, '2022-02-22 20:00:00', 'Purchase', 12),\n  (54, 2222222222222223, 70.50, '2022-02-23 22:30:00', 'Purchase', 13),\n  (55, 2222222222222224, 85.00, '2022-02-24 23:45:00', 'Purchase', 14),\n  (56, 2222222222222225, 105.25, '2022-02-25 08:15:00', 'Purchase', 15),\n  (57, 2222222222222226, 90.75, '2022-02-26 10:45:00', 'Purchase', 16),\n  (58, 2222222222222227, 115.00, '2022-02-27 12:30:00', 'Purchase', 17),\n  (59, 2222222222222228, 120.50, '2022-02-28 14:20:00', 'Purchase', 18),\n  (60, 2222222222222229, 95.25, '2022-03-01 16:00:00', 'Purchase', 19),\n  (61, 2222222222222220, 110.50, '2022-03-02 18:30:00', 'Purchase', 20),\n  (62, 2222222222222221, 80.75, '2022-03-03 20:15:00', 'Purchase', 1),\n  (63, 2222222222222222, 95.25, '2022-03-04 22:00:00', 'Purchase', 2),\n  (64, 2222222222222223, 110.50, '2022-03-05 23:45:00', 'Purchase', 3),\n  (65, 2222222222222224, 120.75, '2022-03-06 08:00:00', 'Purchase', 4),\n  (66, 2222222222222225, 85.25, '2022-03-07 10:30:00', 'Purchase', 5),\n  (67, 2222222222222226, 100.75, '2022-03-08 12:15:00', 'Purchase', 6),\n  (68, 2222222222222227, 115.00, '2022-03-09 14:50:00', 'Purchase', 7),\n  (69, 2222222222222228, 133330.25, '2022-03-10 16:40:00', 'Purchase', 8),\n  (70, 2222222222222228, 70434.50, '2022-03-10 18:30:00', 'Purchase', 8),\n  (71, 2222222222222228, 8135.00, '2022-03-10 20:00:00', 'Purchase', 8),\n  (72, 2222222222222231, 105.25, '2022-03-13 22:30:00', 'Purchase', 11),\n  (73, 2222222222222232, 90.75, '2022-03-14 23:45:00', 'Purchase', 12),\n  (74, 2222222222222233, 115.00, '2022-03-15 08:15:00', 'Purchase', 13),\n  (75, 2222222222222234, 120.50, '2022-03-16 10:45:00', 'Purchase', 14),\n  (76, 2222222222222235, 95.25, '2022-03-17 12:30:00', 'Purchase', 15),\n  (77, 2222222222222236, 110.50, '2022-03-18 14:20:00', 'Purchase', 16),\n  (79, 2222222222222237, 80.75, '2022-03-19 16:00:00', 'Purchase', 17),\n  (80, 2222222222222238, 95.25, '2022-03-20 18:30:00', 'Purchase', 18),\n  (81, 2222222222222239, 110.50, '2022-03-21 20:15:00', 'Purchase', 19),\n  (82, 2222222222222228, 8888.00, '2022-03-22 21:00:00', 'Purchase', 8),\n  (83, 2222222222222228, 30000.00, '2022-03-22 22:10:00', 'Purchase', 8);\nCREATE TABLE Card (\n    CardID INT PRIMARY KEY,\n    CustomerID INT,\n    CardNumber VARCHAR(16),\n    ExpiryDate DATE,\n    CVV INT,\n    CardType VARCHAR(50),\n    FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID)\n);\nINSERT INTO Card (CardID, CustomerID, CardNumber, ExpiryDate, CVV, CardType)\nVALUES\n  (1, 1, '1234567812345670', '2024-12-31', 123, 'Visa'),\n  (2, 2, '2345678923456781', '2023-11-30', 456, 'MasterCard'),\n  (3, 3, '3456789034567892', '2024-08-31', 789, 'American Express'),\n  (4, 4, '4567890145678903', '2023-10-31', 234, 'Visa'),\n  (5, 5, '5678901256789014', '2024-05-31', 567, 'MasterCard'),\n  (6, 6, '6789012367890125', '2023-09-30', 890, 'American Express'),\n  (7, 7, '7890123478901236', '2024-11-30', 345, 'Visa'),\n  (8, 8, '8901234589012347', '2023-07-31', 678, 'MasterCard'),\n  (9, 9, '9012345690123458', '2024-04-30', 901, 'American Express'),\n  (10, 10, '1234567801234569', '2023-12-31', 234, 'Visa'),\n  (11, 11, '2345678912345670', '2024-10-31', 567, 'MasterCard'),\n  (12, 12, '3456789023456781', '2023-08-31', 890, 'American Express'),\n  (13, 13, '4567890134567892', '2024-07-31', 123, 'Visa'),\n  (14, 14, '5678901245678903', '2023-06-30', 456, 'MasterCard'),\n  (15, 15, '6789012356789014', '2024-09-30', 789, 'American Express'),\n  (16, 16, '7890123467890125', '2023-05-31', 234, 'Visa'),\n  (17, 17, '8901234578901236', '2024-06-30', 567, 'MasterCard'),\n  (18, 18, '9012345689012347', '2023-04-30', 890, 'American Express'),\n  (19, 19, '0123456790123458', '2024-03-31', 123, 'Visa'),\n  (20, 20, '1234567801234561', '2023-02-28', 456, 'MasterCard'),\n  (21, 21, '2345678912345672', '2024-01-31', 789, 'American Express'),\n  (22, 22, '3456789023456783', '2023-11-30', 234, 'Visa'),\n  (23, 23, '4567890134567894', '2024-08-31', 567, 'MasterCard'),\n  (24, 24, '5678901245678905', '2023-10-31', 890, 'American Express'),\n  (25, 25, '6789012356789016', '2024-05-31', 123, 'Visa'),\n  (26, 26, '7890123467890127', '2023-09-30', 456, 'MasterCard'),\n  (27, 27, '8901234578901238', '2024-11-30', 789, 'American Express'),\n  (28, 28, '9012345689012349', '2023-07-31', 234, 'Visa'),\n  (29, 29, '0123456790123450', '2024-04-30', 567, 'MasterCard'),\n  (30, 30, '1234567801234561', '2023-12-31', 890, 'American Express');\nCREATE TABLE MerchantTransactionAlert (\n    AlertID INT PRIMARY KEY,\n    MerchantTransactionID INT,\n    AlertType VARCHAR(50),\n    AlertDate DATETIME,\n    CaseID INT,\n    FOREIGN KEY (CaseID) REFERENCES AlertCase(CaseID),\n   FOREIGN KEY (MerchantTransactionID) REFERENCES MerchantTransaction(MerchantTransactionID)\n);\n#case-1\nSELECT\n  GROUP_CONCAT(MerchantTransactionID) AS TransactionIDs,\n  FromAccountNumber,\n  MerchantID,\n  DATE(TransactionDate) AS TransactionDate,\n  GROUP_CONCAT(Amount) AS AmountList\nFROM\n  MerchantTransaction\nWHERE\n  Amount > 5000\nGROUP BY\n  DATE(TransactionDate), FromAccountNumber, MerchantID\nHAVING\n  COUNT(*) >= 2;\nINSERT INTO MerchantTransactionAlert (AlertID, MerchantTransactionID, AlertType, AlertDate, CaseID) VALUES \n(1, 69, 'HighTransaction', '2022-03-10 08:30:00', 1);\nINSERT INTO MerchantTransactionAlert (AlertID, MerchantTransactionID, AlertType, AlertDate, CaseID) VALUES \n(2, 70, 'HighTransaction', '2022-03-10 08:30:00', 1);\nINSERT INTO MerchantTransactionAlert (AlertID, MerchantTransactionID, AlertType, AlertDate, CaseID) VALUES \n(3, 71, 'HighTransaction', '2022-03-10 08:30:00', 1);\nINSERT INTO MerchantTransactionAlert (AlertID, MerchantTransactionID, AlertType, AlertDate, CaseID) VALUES \n(4, 82, 'HighTransaction', '2022-03-22 00:00:00', 2);\nINSERT INTO MerchantTransactionAlert (AlertID, MerchantTransactionID, AlertType, AlertDate, CaseID) VALUES \n(5, 83, 'HighTransaction', '2022-03-22 00:00:00', 2);\nINSERT INTO AlertCase (CaseID, Investigator, Status, Description) VALUES \n(1, \"John\", \"OPEN\", \"ALERT- Abnormal transaction detected\");\nINSERT INTO AlertCase (CaseID, Investigator, Status, Description) VALUES \n(2, \"John\", \"OPEN\", \"ALERT- Abnormal transaction detected\");\n\nINSERT INTO MerchantTransactionAlert (AlertID, MerchantTransactionID, AlertType, AlertDate, CaseID) VALUES \n(5, 83, 'HighTransaction', '2022-03-22 00:00:00', 2);\nSELECT * FROM MerchantTransactionAlert;\n#case-2\nSELECT * FROM MerchantTransaction WHERE Amount>=5000;\nINSERT INTO MerchantTransaction (MerchantTransactionID, FromAccountNumber, Amount, TransactionDate, TransactionType, MerchantID)\nVALUES\n  (84, 2222222222222221, 999.99, '2022-03-22 14:30:00', 'Purchase', 5),\n  (85, 2222222222222221, 999.99, '2022-03-22 14:31:00', 'Purchase', 5);\n#case-3\nSELECT\n  MerchantTransactionID,\n  FromAccountNumber,\n  Amount,\n  TransactionDate,\n  TransactionType,\n  MerchantID\nFROM\n  MerchantTransaction mt1\nWHERE\n  Amount IN (\n    SELECT\n      Amount\n    FROM\n      MerchantTransaction mt2\n    WHERE\n      mt2.MerchantTransactionID <> mt1.MerchantTransactionID\n      AND mt2.TransactionDate BETWEEN\n        DATE_SUB(mt1.TransactionDate, INTERVAL 1 MINUTE)\n        AND DATE_ADD(mt1.TransactionDate, INTERVAL 1 MINUTE)\n  );\nINSERT INTO AlertCase (CaseID, Investigator, Status, Description) VALUES \n(3, \"Doe\", \"OPEN\", \"ALERT- DUPLICATE transaction detected\");\nINSERT INTO MerchantTransactionAlert (AlertID, MerchantTransactionID, AlertType, AlertDate, CaseID) VALUES \n(6, 84, 'DuplicateTransaction', '2022-03-23 00:00:00', 3);\nINSERT INTO MerchantTransactionAlert (AlertID, MerchantTransactionID, AlertType, AlertDate, CaseID) VALUES \n(7, 85, 'DuplicateTransaction', '2022-03-23 00:00:00', 3);\n#Case-4 \nSELECT\n  c.CustomerID,\n  COUNT(mta.AlertID) AS AlertCount\nFROM\n  Customer c\nLEFT JOIN\n  Account a ON c.CustomerID = a.CustomerID\nLEFT JOIN\n  MerchantTransaction mt ON a.AccountNumber = mt.FromAccountNumber\nLEFT JOIN\n  MerchantTransactionAlert mta ON mt.MerchantTransactionID = mta.MerchantTransactionID\nGROUP BY\n  c.CustomerID\nORDER BY\n  AlertCount DESC;\n",
+    "options": {
+        "tabSize": 4,
+        "indentSize": 4,
+        "insertSpaces": true,
+        "defaultEOL": "LF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 10,
+                    "column": 16
+                },
+                "position": {
+                    "lineNumber": 10,
+                    "column": 16
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 338,
+                "column": 1
+            },
+            "firstPositionDeltaTop": 12
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "content": "Welcome to the MySQL Shell - DB Notebook.\n\nPress Cmd+Enter to execute the code block.\n\nExecute \\sql to switch to SQL, \\js to JavaScript and \\ts to TypeScript mode.\nExecute \\help or \\? for help;",
+                            "language": "ansi"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 2,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "ba382033-bdb0-4782-8a02-3c326eb2d92d",
+                            "content": "OK, 0 records retrieved in 1.27ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 12
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 3,
+                "end": 3,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "1a9548e9-c81b-4ca1-9cee-cb934c53baa7"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 22
+                        },
+                        "contentStart": 0,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "25d903ed-d519-406b-d91b-bae3318c53f7",
+                    "resultId": "1a9548e9-c81b-4ca1-9cee-cb934c53baa7",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": "John",
+                            "2": "Doe",
+                            "3": "123 Main St",
+                            "4": "john.doe@example.com",
+                            "5": "1234567890",
+                            "6": "Software Engineer"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "CustomerID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "FirstName",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "LastName",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Address",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Email",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "PhoneNumber",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "Occupation",
+                            "field": "6",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 3.56ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT * FROM Customer"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 4,
+                "end": 34,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "babc75b5-0bad-4bb8-d2ff-592aa7bd346d",
+                            "content": "OK, 29 rows affected in 14.076ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 3021
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 35,
+                "end": 42,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "dc99998c-b658-4eb0-853d-54813f3177bb",
+                            "content": "OK, 0 records retrieved in 37.284ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 220
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 43,
+                "end": 94,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "b054e311-7fce-4074-f6a6-3596a8287e3e",
+                            "content": "OK, 50 rows affected in 10.363ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 3127
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 95,
+                "end": 101,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "a79fdd0b-8bbb-408c-921b-638ccd704ec3",
+                            "content": "OK, 0 records retrieved in 14.361ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 174
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 102,
+                "end": 123,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "d4f70f55-2400-49d3-b6db-8348e65cb314",
+                            "content": "OK, 20 rows affected in 5.99ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 2201
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 124,
+                "end": 133,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "c1324c9b-7445-4576-947b-0217b7b49d30",
+                            "content": "OK, 0 records retrieved in 28.372ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 357
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 134,
+                "end": 220,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "8de47e90-97b1-411a-c512-5ca3d07188dd",
+                            "content": "OK, 82 rows affected in 6.968ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6056
+                        },
+                        "contentStart": 3,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 221,
+                "end": 229,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "62400869-196f-4e97-de76-7f2b9629b398",
+                            "content": "OK, 0 records retrieved in 27.676ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 219
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 230,
+                "end": 261,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "f76a7ff5-9b95-41b1-aa47-ccf43ec93e36",
+                            "content": "OK, 30 rows affected in 3.971ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 2015
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 262,
+                "end": 270,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "82848af8-5f20-47fe-b918-6aeec78b9e9e",
+                            "content": "OK, 0 records retrieved in 34.536ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 317
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 271,
+                "end": 285,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "4d56d09b-9b09-400d-9dd5-99a1b26ee336"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 324
+                        },
+                        "contentStart": 8,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "25d903ed-d519-406b-d91b-bae3318c53f7",
+                    "resultId": "4d56d09b-9b09-400d-9dd5-99a1b26ee336",
+                    "rows": [
+                        {
+                            "0": "69,70,71",
+                            "1": 2222222222222228,
+                            "2": 8,
+                            "3": "2022-03-10",
+                            "4": "133330.25,70434.50,8135.00"
+                        },
+                        {
+                            "0": "82,83",
+                            "1": 2222222222222228,
+                            "2": 8,
+                            "3": "2022-03-22",
+                            "4": "8888.00,30000.00"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "TransactionIDs",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "FromAccountNumber",
+                            "field": "1",
+                            "dataType": {
+                                "type": 5
+                            }
+                        },
+                        {
+                            "title": "MerchantID",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "TransactionDate",
+                            "field": "3",
+                            "dataType": {
+                                "type": 28
+                            }
+                        },
+                        {
+                            "title": "AmountList",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 2 records retrieved in 1.952ms"
+                    },
+                    "totalRowCount": 2,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT\n  GROUP_CONCAT(MerchantTransactionID) AS TransactionIDs,\n  FromAccountNumber,\n  MerchantID,\n  DATE(TransactionDate) AS TransactionDate,\n  GROUP_CONCAT(Amount) AS AmountList\nFROM\n  MerchantTransaction\nWHERE\n  Amount > 5000\nGROUP BY\n  DATE(TransactionDate), FromAccountNumber, MerchantID\nHAVING\n  COUNT(*) >= 2"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 286,
+                "end": 287,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "53782c6f-0db7-408a-c9b1-06d1f3807ac3",
+                            "content": "OK, 1 row affected in 2.636ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 161
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 288,
+                "end": 289,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "63c56713-4f98-485f-b6f5-8c81c4c36f96",
+                            "content": "OK, 1 row affected in 2.369ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 161
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 161,
+                            "length": 0
+                        },
+                        "contentStart": 160,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 290,
+                "end": 291,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "88d0c996-bb1d-4421-dcf4-77ebe3f77bf2",
+                            "content": "OK, 1 row affected in 3.993ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 161
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 292,
+                "end": 293,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "ed42907d-0a30-4c9c-ed35-6d395969e5e5",
+                            "content": "OK, 1 row affected in 3.017ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 161
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 294,
+                "end": 295,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "c8327402-3c99-41cc-cae9-cf8fdcacfd14",
+                            "content": "OK, 0 records retrieved in 30.205ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 161
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 161,
+                            "length": 1
+                        },
+                        "contentStart": 160,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 296,
+                "end": 297,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "cb4a8e5d-ec8c-4a45-8bbd-c8554b8d1982",
+                            "content": "OK, 1 row affected in 6.515ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 134
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 298,
+                "end": 299,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "4dc8dad6-aaa7-4b9e-a7a3-e2898dab3873",
+                            "content": "OK, 1 row affected in 3.548ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 134
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 300,
+                "end": 300,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "9f990abe-ee68-412c-93df-987ce18f8d38",
+                            "content": "OK, 1 row affected in 5.465ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 301,
+                "end": 302,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "9df5099e-2798-484d-94a4-ed560f26578e",
+                            "content": "OK, 1 row affected in 1.825ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 161
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 303,
+                "end": 303,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "4a9ed431-dffb-4f4e-9c07-e60e5a197e67"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 39
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "25d903ed-d519-406b-d91b-bae3318c53f7",
+                    "resultId": "4a9ed431-dffb-4f4e-9c07-e60e5a197e67",
+                    "rows": [
+                        {
+                            "0": 1,
+                            "1": 69,
+                            "2": "HighTransaction",
+                            "3": "2022-03-10 08:30:00",
+                            "4": 1
+                        },
+                        {
+                            "0": 2,
+                            "1": 70,
+                            "2": "HighTransaction",
+                            "3": "2022-03-10 08:30:00",
+                            "4": 1
+                        },
+                        {
+                            "0": 3,
+                            "1": 71,
+                            "2": "HighTransaction",
+                            "3": "2022-03-10 08:30:00",
+                            "4": 1
+                        },
+                        {
+                            "0": 4,
+                            "1": 82,
+                            "2": "HighTransaction",
+                            "3": "2022-03-22 00:00:00",
+                            "4": 2
+                        },
+                        {
+                            "0": 5,
+                            "1": 83,
+                            "2": "HighTransaction",
+                            "3": "2022-03-22 00:00:00",
+                            "4": 2
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "AlertID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "MerchantTransactionID",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "AlertType",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "AlertDate",
+                            "field": "3",
+                            "dataType": {
+                                "type": 26
+                            }
+                        },
+                        {
+                            "title": "CaseID",
+                            "field": "4",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 0.805ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT * FROM MerchantTransactionAlert"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 304,
+                "end": 305,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "2b5a008a-9b76-489a-ce84-d2b7c526c5b6"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 61
+                        },
+                        "contentStart": 8,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "25d903ed-d519-406b-d91b-bae3318c53f7",
+                    "resultId": "2b5a008a-9b76-489a-ce84-d2b7c526c5b6",
+                    "rows": [
+                        {
+                            "0": 6,
+                            "1": 2222222222222226,
+                            "2": "11320.00",
+                            "3": "2022-01-06 18:00:00",
+                            "4": "Purchase",
+                            "5": 6
+                        },
+                        {
+                            "0": 13,
+                            "1": 2222222222222233,
+                            "2": "70000.50",
+                            "3": "2022-01-13 14:50:00",
+                            "4": "Purchase",
+                            "5": 13
+                        },
+                        {
+                            "0": 69,
+                            "1": 2222222222222228,
+                            "2": "133330.25",
+                            "3": "2022-03-10 16:40:00",
+                            "4": "Purchase",
+                            "5": 8
+                        },
+                        {
+                            "0": 70,
+                            "1": 2222222222222228,
+                            "2": "70434.50",
+                            "3": "2022-03-10 18:30:00",
+                            "4": "Purchase",
+                            "5": 8
+                        },
+                        {
+                            "0": 71,
+                            "1": 2222222222222228,
+                            "2": "8135.00",
+                            "3": "2022-03-10 20:00:00",
+                            "4": "Purchase",
+                            "5": 8
+                        },
+                        {
+                            "0": 82,
+                            "1": 2222222222222228,
+                            "2": "8888.00",
+                            "3": "2022-03-22 21:00:00",
+                            "4": "Purchase",
+                            "5": 8
+                        },
+                        {
+                            "0": 83,
+                            "1": 2222222222222228,
+                            "2": "30000.00",
+                            "3": "2022-03-22 22:10:00",
+                            "4": "Purchase",
+                            "5": 8
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "MerchantTransactionID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "FromAccountNumber",
+                            "field": "1",
+                            "dataType": {
+                                "type": 5
+                            }
+                        },
+                        {
+                            "title": "Amount",
+                            "field": "2",
+                            "dataType": {
+                                "type": 10
+                            }
+                        },
+                        {
+                            "title": "TransactionDate",
+                            "field": "3",
+                            "dataType": {
+                                "type": 26
+                            }
+                        },
+                        {
+                            "title": "TransactionType",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "MerchantID",
+                            "field": "5",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 7 records retrieved in 0.893ms"
+                    },
+                    "totalRowCount": 7,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT * FROM MerchantTransaction WHERE Amount>=5000"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 306,
+                "end": 309,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "1114e2d2-72f6-4cbe-ace5-62c316fb9c66",
+                            "content": "OK, 2 rows affected in 18.131ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 279
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 310,
+                "end": 331,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "843c5afd-2be3-41b9-8c32-85fd1e31fe4c"
+                    ]
+                },
+                "currentHeight": 36,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 467
+                        },
+                        "contentStart": 8,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "25d903ed-d519-406b-d91b-bae3318c53f7",
+                    "resultId": "843c5afd-2be3-41b9-8c32-85fd1e31fe4c",
+                    "rows": [
+                        {
+                            "0": 84,
+                            "1": 2222222222222221,
+                            "2": "999.99",
+                            "3": "2022-03-22 14:30:00",
+                            "4": "Purchase",
+                            "5": 5
+                        },
+                        {
+                            "0": 85,
+                            "1": 2222222222222221,
+                            "2": "999.99",
+                            "3": "2022-03-22 14:31:00",
+                            "4": "Purchase",
+                            "5": 5
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "MerchantTransactionID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "FromAccountNumber",
+                            "field": "1",
+                            "dataType": {
+                                "type": 5
+                            }
+                        },
+                        {
+                            "title": "Amount",
+                            "field": "2",
+                            "dataType": {
+                                "type": 10
+                            }
+                        },
+                        {
+                            "title": "TransactionDate",
+                            "field": "3",
+                            "dataType": {
+                                "type": 26
+                            }
+                        },
+                        {
+                            "title": "TransactionType",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17
+                            }
+                        },
+                        {
+                            "title": "MerchantID",
+                            "field": "5",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 2 records retrieved in 30.037ms"
+                    },
+                    "totalRowCount": 2,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT\n  MerchantTransactionID,\n  FromAccountNumber,\n  Amount,\n  TransactionDate,\n  TransactionType,\n  MerchantID\nFROM\n  MerchantTransaction mt1\nWHERE\n  Amount IN (\n    SELECT\n      Amount\n    FROM\n      MerchantTransaction mt2\n    WHERE\n      mt2.MerchantTransactionID <> mt1.MerchantTransactionID\n      AND mt2.TransactionDate BETWEEN\n        DATE_SUB(mt1.TransactionDate, INTERVAL 1 MINUTE)\n        AND DATE_ADD(mt1.TransactionDate, INTERVAL 1 MINUTE)\n  )"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 332,
+                "end": 333,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "a70b215e-57f9-461e-bf93-09f564ae03c1",
+                            "content": "OK, 1 row affected in 11.157ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 134
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 334,
+                "end": 335,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "a452e912-500a-4c4a-fc30-d5d2f10af72e",
+                            "content": "OK, 1 row affected in 5.728ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 166
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 336,
+                "end": 337,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "443b6ae5-4285-47e4-f6db-1e0e9480d2eb",
+                            "content": "OK, 1 row affected in 2.758ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 166
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 338,
+                "end": 353,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "c388230e-3d59-48e5-d33e-da0502301767"
+                    ]
+                },
+                "currentHeight": 352,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 363
+                        },
+                        "contentStart": 9,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "25d903ed-d519-406b-d91b-bae3318c53f7",
+                    "resultId": "c388230e-3d59-48e5-d33e-da0502301767",
+                    "rows": [
+                        {
+                            "0": 8,
+                            "1": 5
+                        },
+                        {
+                            "0": 1,
+                            "1": 2
+                        },
+                        {
+                            "0": 2,
+                            "1": 0
+                        },
+                        {
+                            "0": 3,
+                            "1": 0
+                        },
+                        {
+                            "0": 4,
+                            "1": 0
+                        },
+                        {
+                            "0": 5,
+                            "1": 0
+                        },
+                        {
+                            "0": 6,
+                            "1": 0
+                        },
+                        {
+                            "0": 7,
+                            "1": 0
+                        },
+                        {
+                            "0": 9,
+                            "1": 0
+                        },
+                        {
+                            "0": 10,
+                            "1": 0
+                        },
+                        {
+                            "0": 11,
+                            "1": 0
+                        },
+                        {
+                            "0": 12,
+                            "1": 0
+                        },
+                        {
+                            "0": 13,
+                            "1": 0
+                        },
+                        {
+                            "0": 14,
+                            "1": 0
+                        },
+                        {
+                            "0": 15,
+                            "1": 0
+                        },
+                        {
+                            "0": 16,
+                            "1": 0
+                        },
+                        {
+                            "0": 17,
+                            "1": 0
+                        },
+                        {
+                            "0": 18,
+                            "1": 0
+                        },
+                        {
+                            "0": 19,
+                            "1": 0
+                        },
+                        {
+                            "0": 20,
+                            "1": 0
+                        },
+                        {
+                            "0": 21,
+                            "1": 0
+                        },
+                        {
+                            "0": 22,
+                            "1": 0
+                        },
+                        {
+                            "0": 23,
+                            "1": 0
+                        },
+                        {
+                            "0": 24,
+                            "1": 0
+                        },
+                        {
+                            "0": 25,
+                            "1": 0
+                        },
+                        {
+                            "0": 26,
+                            "1": 0
+                        },
+                        {
+                            "0": 27,
+                            "1": 0
+                        },
+                        {
+                            "0": 28,
+                            "1": 0
+                        },
+                        {
+                            "0": 29,
+                            "1": 0
+                        },
+                        {
+                            "0": 30,
+                            "1": 0
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "CustomerID",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4
+                            }
+                        },
+                        {
+                            "title": "AlertCount",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4
+                            }
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 30 records retrieved in 62.824ms"
+                    },
+                    "totalRowCount": 30,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT\n  c.CustomerID,\n  COUNT(mta.AlertID) AS AlertCount\nFROM\n  Customer c\nLEFT JOIN\n  Account a ON c.CustomerID = a.CustomerID\nLEFT JOIN\n  MerchantTransaction mt ON a.AccountNumber = mt.FromAccountNumber\nLEFT JOIN\n  MerchantTransactionAlert mta ON mt.MerchantTransactionID = mta.MerchantTransactionID\nGROUP BY\n  c.CustomerID\nORDER BY\n  AlertCount DESC"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 354,
+                "end": 354,
+                "language": "mysql",
+                "currentHeight": 180,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}
